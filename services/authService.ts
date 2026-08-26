@@ -53,27 +53,25 @@ export const authService = {
     data: RegisterData
   ): Promise<ApiResponse<AuthResponseData>> => {
     try {
-      const response = await ApiClient.post<{ user: User }>(
+      const response = await ApiClient.post<AuthResponseData>(
         "/api/auth/register",
         data
       );
 
-      if (!response.success || !response.data?.user) {
+      if (
+        !response.success ||
+        !response.data ||
+        !response.data.user ||
+        !response.data.tokens?.access
+      ) {
         throw new Error(response.message || "Registration failed");
       }
 
-      const user = response.data.user;
+      const { user, tokens } = response.data;
 
-      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+      authService.setSession(tokens.access, tokens.refresh || "", user);
 
-      return {
-        success: true,
-        message: response.message || "Registration successful",
-        data: {
-          user,
-          tokens: { access: "", refresh: "" },
-        },
-      };
+      return response;
     } catch (error) {
       console.error("Registration error:", error);
       throw error;

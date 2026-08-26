@@ -62,7 +62,7 @@ export class ApiClient {
       }
 
       return {
-        success: true,
+        success: data?.success !== undefined ? data.success : true,
         message: data?.message || 'Success',
         data: (
           data?.data !== undefined ? data.data : data
