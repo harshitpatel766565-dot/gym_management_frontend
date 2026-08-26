@@ -41,6 +41,7 @@ export type ProgramCategory =
 
 export interface Program {
   id: string;
+  _id?: string;
   title: ProgramCategory | string;
   slug: string;
   shortDescription: string;

@@ -76,7 +76,7 @@ export default function AdminUsersPage() {
       email: u.email,
       phone: u.phone,
       role: u.role,
-      isActive: u.isActive,
+      isActive: u.isActive ?? true,
     });
     setIsModalOpen(true);
   };
@@ -250,7 +250,7 @@ export default function AdminUsersPage() {
                   </td>
 
                   {/* Joined Date */}
-                  <td className="py-4 px-4 text-forge-400">{formatDate(u.createdAt)}</td>
+                  <td className="py-4 px-4 text-forge-400">{formatDate(u.createdAt || '')}</td>
 
                   {/* Action Buttons */}
                   <td className="py-4 px-5 text-right">

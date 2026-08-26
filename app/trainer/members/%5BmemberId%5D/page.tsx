@@ -265,7 +265,7 @@ export default function TrainerMemberDetailPage() {
                         {formatDate(b.date)} • {b.startTime}
                       </span>
                     </div>
-                    <Badge variant={b.status === 'confirmed' ? 'success' : b.status === 'completed' ? 'primary' : 'outline'}>
+                    <Badge variant={b.status === 'confirmed' ? 'success' : b.status === 'completed' ? 'purple' : 'outline'}>
                       {b.status}
                     </Badge>
                   </div>

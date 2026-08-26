@@ -13,7 +13,7 @@ export interface PaymentTransaction {
   userId: string;
   userName: string;
   userEmail: string;
-  planId: string;
+  planId?: string;
   planName: string;
   amount: number; // in INR
   currency: string;

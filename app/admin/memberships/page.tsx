@@ -473,7 +473,7 @@ export default function AdminMembershipsPage() {
                     <Button
                       type="button"
                       variant="outline"
-                      size="xs"
+                      size="sm"
                       onClick={() => setFeatures([...features, { title: '', included: true }])}
                       className="flex items-center gap-1 text-[11px] text-brand-orange border-brand-orange/30 hover:border-brand-orange"
                     >

@@ -27,8 +27,8 @@ export default function AdminAttendancePage() {
 
   const filtered = records.filter(
     (r) =>
-      (r.userName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-      r.date.includes(searchQuery)
+      (r.userName || r.memberName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (r.date || r.checkInTime || '').includes(searchQuery)
   );
 
   return (
@@ -71,10 +71,10 @@ export default function AdminAttendancePage() {
                   <td className="py-4 px-5">
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-brand-orange" />
-                      <span className="font-bold text-white font-heading">{r.userName || 'Alex Johnson'}</span>
+                      <span className="font-bold text-white font-heading">{r.userName || r.memberName || 'Alex Johnson'}</span>
                     </div>
                   </td>
-                  <td className="py-4 px-4 text-forge-300">{formatDate(r.date)}</td>
+                  <td className="py-4 px-4 text-forge-300">{formatDate(r.date || r.checkInTime || '')}</td>
                   <td className="py-4 px-4">
                     <Badge variant={r.status === 'present' ? 'success' : r.status === 'holiday' ? 'warning' : 'danger'}>
                       {r.status}

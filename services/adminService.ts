@@ -4,6 +4,8 @@ import { User } from "@/types/user";
 import { Trainer } from "@/types/trainer";
 import { Booking } from "@/types/booking";
 import { Program } from "@/types/workout";
+import { AttendanceRecord } from "@/types/attendance";
+import { PaymentTransaction } from "@/types/payment";
 
 // ==========================================
 // ADMIN ANALYTICS TYPE
@@ -21,27 +23,9 @@ export interface AdminAnalyticsSummary {
   attendanceByHour: Array<{ hour: string; count: number }>;
 }
 
-// ==========================================
-// PAYMENT TRANSACTION TYPE
-// ==========================================
-export interface PaymentTransaction {
-  id: string;
-  memberName: string;
-  planName: string;
-  amount: number;
-  status: string;
-  date: string;
-}
 
-// ==========================================
-// ATTENDANCE RECORD TYPE
-// ==========================================
-export interface AttendanceRecord {
-  id: string;
-  memberName: string;
-  checkInTime: string;
-  status: string;
-}
+
+
 
 // ==========================================
 // ADMIN SERVICE DEFINITION

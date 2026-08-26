@@ -1,12 +1,13 @@
-export type AttendanceStatus = 'present' | 'absent' | 'holiday';
+export type AttendanceStatus = 'present' | 'absent' | 'holiday' | 'late';
 
 export interface AttendanceRecord {
   id: string;
-  userId: string;
+  userId?: string;
   userName?: string;
-  date: string; // YYYY-MM-DD
+  memberName?: string;
+  date?: string; // YYYY-MM-DD
   status: AttendanceStatus;
-  checkInTime?: string; // HH:mm AM/PM
+  checkInTime?: string; // HH:mm AM/PM or ISO date string
   checkOutTime?: string;
   durationMinutes?: number;
   entryMethod?: 'QR_CODE' | 'BIOMETRIC' | 'MANUAL_DESK' | 'CARD_TAP';

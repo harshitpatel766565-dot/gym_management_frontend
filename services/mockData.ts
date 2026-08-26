@@ -1,7 +1,7 @@
-import { User } from '@/types/user';
+import { User, WorkoutProgress } from '@/types/user';
 import { Trainer } from '@/types/trainer';
 import { MembershipPlan, UserMembership } from '@/types/membership';
-import { Program, Exercise, WorkoutProgress } from '@/types/workout';
+import { Program, Exercise } from '@/types/workout';
 import { Booking } from '@/types/booking';
 import { AttendanceRecord, AttendanceMonthlySummary } from '@/types/attendance';
 import { PaymentTransaction } from '@/types/payment';
@@ -13,7 +13,7 @@ export const INITIAL_USERS: User[] = [
     name: 'Alex Johnson',
     email: 'alex@example.com',
     phone: '+91 98765 11111',
-    role: 'member',
+    role: 'user',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
     createdAt: '2024-01-15T10:00:00Z',
     updatedAt: '2024-06-01T10:00:00Z',
@@ -64,7 +64,7 @@ export const INITIAL_USERS: User[] = [
     name: 'Priya Patel',
     email: 'priya@example.com',
     phone: '+91 98765 44444',
-    role: 'member',
+    role: 'user',
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80',
     createdAt: '2024-03-01T10:00:00Z',
     updatedAt: '2024-05-15T10:00:00Z',
@@ -90,7 +90,7 @@ export const INITIAL_USERS: User[] = [
     name: 'David Miller',
     email: 'david@example.com',
     phone: '+91 98765 55555',
-    role: 'member',
+    role: 'user',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80',
     createdAt: '2024-02-20T10:00:00Z',
     updatedAt: '2024-04-10T10:00:00Z',
