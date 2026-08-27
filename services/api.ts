@@ -2,7 +2,7 @@ import { ApiResponse, ApiError } from "@/types/api";
 
 const API_BASE_URL = (
   process.env.NEXT_API_URL ||
-  "http://localhost:5000"
+  "gym-management-backend-phi.vercel.app"
 ).replace(/\/$/, "");
 
 export class ApiClient {
