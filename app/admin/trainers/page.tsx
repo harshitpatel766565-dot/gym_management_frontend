@@ -85,7 +85,7 @@ export default function AdminTrainersPage() {
     reader.onloadend = async () => {
       try {
         const base64Data = reader.result as string;
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/upload`, {
+        const response = await fetch(`${process.env.NEXT_API_URL || 'http://localhost:5000'}/api/upload`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
