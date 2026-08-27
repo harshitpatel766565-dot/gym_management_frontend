@@ -38,7 +38,9 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const apiBaseUrl = process.env.NEXT_API_URL || 'gym-management-backend-phi.vercel.app';
+      const apiBaseUrl =
+        process.env.NEXT_API_URL ||
+        "https://gym-management-backend-phi.vercel.app";
       const response = await fetch(`${apiBaseUrl}/api/contact`, {
         method: 'POST',
         headers: {

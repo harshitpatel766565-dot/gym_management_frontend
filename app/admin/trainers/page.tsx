@@ -85,7 +85,10 @@ export default function AdminTrainersPage() {
     reader.onloadend = async () => {
       try {
         const base64Data = reader.result as string;
-        const response = await fetch(`${process.env.NEXT_API_URL || 'gym-management-backend-phi.vercel.app'}/api/upload`, {
+        const apiBaseUrl =
+          process.env.NEXT_API_URL ||
+          "https://gym-management-backend-phi.vercel.app";
+        const response = await fetch(`${apiBaseUrl}/api/upload`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
